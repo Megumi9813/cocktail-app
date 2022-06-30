@@ -1,0 +1,579 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f4f3f5;
+  font-family: "Lusitana", serif;
+}
+
+nav {
+  height: 80px;
+  background: linear-gradient(#000 0, #031621 64.2%, #06273a 100%);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.nav_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.logo_container {
+  width: 50%;
+}
+
+.links {
+  width: 50%;
+  font-size: 18px;
+}
+
+.links a {
+  display: inline-block;
+  margin-left: 16px;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.logo {
+  width: 100%;
+  max-width: 320px;
+}
+
+.font_awesome {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  z-index: 5;
+}
+
+.btn_menu {
+  background-color: transparent;
+  border: none;
+  color: #f4f3f5;
+  cursor: pointer;
+}
+
+.btn_menu svg {
+  width: 24px;
+  height: 24px;
+}
+
+.btn_menu-close {
+  position: absolute;
+  top: 14px;
+  right: 20px;
+  padding: 8px;
+}
+
+.btn_menu-close svg {
+  width: 32px;
+  height: 32px;
+}
+
+.myList svg {
+  width: 22px;
+  height: 22px;
+}
+
+.menu_backdrop {
+  position: absolute;
+  background: linear-gradient(#000 0, #031621 64.2%, #06273a 100%);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  transition: all 300ms ease;
+  opacity: 0;
+  transform: translate(100%);
+}
+
+.menu-open {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.menu-open .menu_backdrop {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(0);
+}
+
+.menu_list {
+  padding: 32px 0;
+}
+
+.menu_list a {
+  text-decoration: none;
+}
+
+.menu_list a:hover {
+  text-decoration: underline;
+}
+
+.menu_links {
+  text-align: center;
+}
+
+.menu_link {
+  color: #f4f3f5;
+  font-size: 28px;
+}
+
+.row {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 24px;
+}
+
+.cokctail_height {
+  min-height: calc(100vh - 276px);
+}
+
+.cocktails_header {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 80px;
+  padding: 16px;
+  align-items: center;
+}
+
+.input_wrapper {
+  position: relative;
+}
+
+.input_wrapper input {
+  height: 2.25rem;
+  border: 1px solid #e6e2dc;
+  padding: 5px;
+  width: 200px;
+  border-radius: 4px;
+}
+
+.search_btn {
+  position: absolute;
+  background-color: #fff;
+  border: none;
+  width: 25px;
+  height: 25px;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.search_btn svg {
+  height: 100%;
+  color: #888;
+}
+
+.cocktail_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 30px;
+}
+
+.cocktail_list a {
+  display: block;
+  width: 50%;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.card {
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  margin: 12px 8px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.cocktail_img {
+  width: 100%;
+  height: 100%;
+}
+
+.cocktail_img img {
+  width: 100%;
+  height: 100%;
+  vertical-align: bottom;
+}
+
+.cocktail_name {
+  padding: 8px;
+  font-size: 14px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+}
+
+footer {
+  background: linear-gradient(#06273a 0, #031621 64.2%, #000 100%);
+  width: 100%;
+  color: #f6f3ee;
+  font-family: "Roboto", sans-serif;
+}
+
+footer p {
+  display: inline-block;
+  width: 40%;
+  display: flex;
+  text-align: center;
+  margin: 0 auto;
+  padding: 30px 0 15px 0;
+}
+
+.footer_logo {
+  width: 60%;
+  display: inline-block;
+  display: flex;
+  margin: 0 auto;
+  padding-top: 30px;
+  justify-content: center;
+}
+
+.footer_logo img {
+  width: 100%;
+  max-width: 450px;
+}
+
+.links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.links a {
+  margin: 0;
+}
+
+.link {
+  padding: 10px 20px;
+  display: none;
+}
+
+.link a {
+  color: #f4f3f5;
+}
+
+.footer_links {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer_links a {
+  padding: 10px;
+  margin: 0 5px;
+  text-decoration: none;
+  font-weight: 700;
+  color: #ce7c2e;
+}
+
+.copyRight {
+  text-align: center;
+  padding-bottom: 15px;
+  color: #f4f3f5;
+}
+
+.cocktail_selected-top {
+  margin-top: 80px;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  color: #333;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.cocktail_selected-top h3 {
+  margin-left: 10px;
+}
+
+.cocktail_selected {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.cocktail_selected-figure img {
+  width: 100%;
+}
+
+.tags {
+  display: flex;
+  padding: 8px 0;
+}
+
+.tag {
+  padding: 4px 12px 4px 0;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9d2a2c;
+}
+
+.tag svg {
+  padding-right: 4px;
+}
+
+.cocktail_selected-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.cocktail_selected-ingredients {
+  padding-bottom: 15px;
+}
+
+.cocktail_selected-ingredient svg {
+  margin-right: 8px;
+}
+
+.home_top-wrapper {
+  text-align: center;
+  margin-top: 80px;
+}
+
+.home_top-wrapper figure {
+  margin: 0 auto;
+  padding-top: 20px;
+  max-width: 340px;
+}
+
+.home_top-wrapper figure img {
+  height: 100%;
+  width: 100%;
+}
+
+.home_top-wrapper h1 {
+  color: #a45241;
+}
+
+.drink_option {
+  padding: 30px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.drink_option li {
+  font-weight: 700;
+  list-style: none;
+  line-height: 3;
+  border-bottom: 4px dotted #ce7c2e;
+}
+
+.home_para {
+  font-size: 20px;
+}
+
+.spotlights a {
+  text-decoration: none;
+}
+
+.spotlight {
+  margin: 50px 0;
+}
+
+.spotlight_card {
+  border: solid 1px #ccc;
+  background-color: #fff;
+}
+
+.spotlight h4 {
+  color: #9d2a2c;
+  padding: 10px 0;
+}
+
+.spotlight h3 {
+  font-size: 32px;
+  color: #333;
+}
+
+.img_holder figure {
+  padding: 18px;
+}
+
+.img_holder figure img {
+  width: 100%;
+}
+
+.btn_myList {
+  margin: 30px 0 45px 0;
+  padding: 12px;
+  border: none;
+  background-color: #9d2a2c;
+  border-radius: 4px;
+  color: #f4f3f5;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.cart_height {
+  margin-top: 80px;
+  min-height: calc(100vh - 270px);
+}
+
+.btn_added {
+  margin: 30px 0 45px 0;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  color: #f4f3f5;
+  font-weight: 700;
+  font-size: 16px;
+  background-color: #7a7a7a;
+}
+
+.btn_remove {
+  border: none;
+  color: #9d2a2c;
+}
+
+.save_list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 30px;
+  justify-content: flex-start;
+}
+
+.cocktail_card {
+  width: 50%;
+}
+
+.list_card {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.square {
+  color: #9d2a2c;
+  transform: rotate(45deg);
+}
+
+.info_height {
+  min-height: calc(100vh - 270px);
+}
+
+.home_height {
+  min-height: calc(100vh - 270px);
+}
+
+.list-icon {
+  position: relative;
+  padding: 10px 0 10px 20px;
+  list-style: none;
+}
+
+.list-icon a {
+  color: #f4f3f5;
+}
+
+.myList-length {
+  background-color: #9d2a2c;
+  color: white;
+  width: 16px;
+  height: 16px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 8px;
+  right: -6px;
+  pointer-events: none;
+}
+
+@media (min-width: 768px) {
+  .cocktail_list a {
+    width: 25%;
+  }
+  .cocktail_card {
+    width: 25%;
+  }
+  .cocktail_selected {
+    flex-direction: row;
+  }
+  .cocktail_selected-figure {
+    width: 40%;
+  }
+  .cocktail_selected-description {
+    width: 60%;
+    padding-left: 30px;
+  }
+  .tags {
+    flex-direction: column;
+    align-items: baseline;
+  }
+  .drink_option {
+    flex-direction: row;
+  }
+  .drink_option li {
+    margin: 0 10px;
+    line-height: 1.6;
+  }
+  .spotlights {
+    display: flex;
+  }
+  .spotlight-left {
+    padding-right: 6px;
+    width: 50%;
+  }
+  .spotlight-right {
+    width: 50%;
+    display: flex;
+  }
+  .spotlight-right a {
+    width: 50%;
+    padding: 0 0 0 6px;
+  }
+  .img_holder figure {
+    padding: 12px;
+  }
+  .img_holder figure img {
+    vertical-align: bottom;
+  }
+  .spotlight h3 {
+    font-size: 24px;
+  }
+  .spotlight h4 {
+    padding: 6px 0;
+  }
+  .nav_wrapper .links {
+    padding: 0 12px;
+  }
+  .link {
+    display: block;
+  }
+  .btn_menu {
+    display: none;
+  }
+}
