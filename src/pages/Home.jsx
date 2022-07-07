@@ -50,8 +50,8 @@ function Home({}) {
           <div className="spotlight-left">
             {
               days.map(img => 
-                <Link to={`/cocktails/${img.idDrink}`}>
-                  <div className="spotlight" key={img.idDrink}>
+                <Link to={`/cocktails/${img.idDrink}`} key={img.idDrink}>
+                  <div className="spotlight" >
                     <div className="spotlight_card">
                       <div className="img_holder">
                         <figure>
@@ -69,8 +69,8 @@ function Home({}) {
           <div className="spotlight-right">
             {
               seasonals.map(seasonal => 
-                <Link to={`/cocktails/${seasonal.idDrink}`}>
-                  <div className="spotlight" key={seasonal.idDrink}>
+                <Link to={`/cocktails/${seasonal.idDrink}`} key={seasonal.idDrink}>
+                  <div className="spotlight" >
                     <div className="spotlight_card">
                       <div className="img_holder">
                         <figure>
@@ -86,8 +86,8 @@ function Home({}) {
             }
             {
               nonAlcoholics.slice(9, 10).map(nonAlcoholic => 
-                <Link to={`/cocktails/${nonAlcoholic.idDrink}`}>
-                  <div className="spotlight" key={nonAlcoholic.idDrink}>
+                <Link key={nonAlcoholic.idDrink} to={`/cocktails/${nonAlcoholic.idDrink}`}>
+                  <div className="spotlight">
                     <div className="spotlight_card">
                       <div className="img_holder">
                         <figure>

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import emptyList from '../assets/undraw_no_data_re_kwbl.svg'
 
 function MyList({save, removeItem}) {
 
@@ -23,6 +24,17 @@ function MyList({save, removeItem}) {
             ))
           }
         </div>
+        {
+          save.length === 0 && <div className="empty_myList">
+          <figure>
+            <img src={emptyList} alt="" />
+          </figure>
+          <h2>You don't have any recipes in your list!</h2>
+          <Link to={"/cocktails"}>
+            <button className='btn_myList'>Browse Cocktails</button>
+          </Link>
+        </div>
+        }
       </div>
     </>
   )

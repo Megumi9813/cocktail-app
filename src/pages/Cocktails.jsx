@@ -3,14 +3,27 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons'
 import axious from 'axios'
 import { Link } from 'react-router-dom'
+import Card from '../components/Card'
 
 function Cocktails() {
     const [cocktails, setCocktails] = useState([]);
     const [searchInput, setSearchInput] = useState("");
 
+    const [filteredItem, setFilteredItem] = useState([]);
+
     async function fetchMenu() {
         const {data} = await axious.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail`);
         setCocktails(data.drinks)
+    }
+
+    function filterCocktail() {
+        cocktails.filter(cocktail => {
+            if(searchInput === '') {
+                return setFilteredItem(cocktail);
+            } else if (cocktail.strDrink.toLowerCase().includes(searchInput.toLowerCase())) {
+                return setFilteredItem(cocktail);
+            }
+        })
     }
 
     useEffect(() => {
@@ -34,6 +47,11 @@ function Cocktails() {
                 </div>
             </div>
             <div className="cocktail_list">
+                {/* {
+                    filterCocktail(filteredItem).map(cocktail => (
+                        <Card cocktail={cocktail} key={cocktail.idDrink}/>
+                    ))
+                } */}
                 {
                     cocktails.filter(cocktail => {
                         if(searchInput === '') {
@@ -42,14 +60,7 @@ function Cocktails() {
                             return cocktail;
                         }
                     }).map(cocktail => (
-                        <Link to={`/cocktails/${cocktail.idDrink}`} key={cocktail.idDrink}>
-                            <div className="card">
-                                <div className='cocktail_img'>
-                                    <img src={cocktail.strDrinkThumb} alt="" />
-                                </div>
-                                <div className="cocktail_name">{cocktail.strDrink}</div>
-                            </div>
-                        </Link>
+                        <Card cocktail={cocktail} key={cocktail.idDrink}/>
                     ))
                 }
             </div>
