@@ -1,6 +1,5 @@
 import React, {useEffect, useState, useRef} from 'react'
 import { Link } from 'react-router-dom'
-import Skeleton from '@mui/material/Skeleton';
 
 function Card({cocktail}) {
   const [img, setImg] = useState();
@@ -13,10 +12,8 @@ function Card({cocktail}) {
         const image = new Image();
         image.onload = () => {
           if (mountRef.current) {
-            console.log({mountRef})
             setImg(image);
           }
-
         }
         image.src = cocktail.strDrinkThumb;
     },[isInit])
@@ -32,10 +29,9 @@ function Card({cocktail}) {
               <div className="cocktail_name">{cocktail.strDrink}</div> 
           </div>
         ) : (
-          <Skeleton variant="rectangular" width={210} height={118} />
+          <div className="card_skelton"></div>
         )
       }
-        
     </Link>
   )
 }
